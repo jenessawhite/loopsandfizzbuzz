@@ -4,23 +4,22 @@
  * Write a function that calculates the sum of all the numbers in an array
  */
 
-function sumOfArray(arr) {
-    if (arr === []) {
-        return 0;
-    }
-    var sum = 0;
-    // YOUR CODE HERE
-    // arr.reduce(function (a,b) {return a + b});
-    arr.forEach(function(i) {
-        sum += i;
-    })
-    return sum;
-}
-
-console.assert(sumOfArray([1, 2]) === 3);
-console.assert(sumOfArray([]) === 0);
-console.assert(sumOfArray([1, 2, 3]) === 6);
-console.assert(sumOfArray([10, 9, 8]) === 27);
+// function sumOfArray(arr) {
+//     if (arr === []) {
+//         return 0;
+//     }
+//     var sum = 0;
+//     // YOUR CODE HERE
+//     arr.forEach(function(i) {
+//         sum += i;
+//     })
+//     return sum;
+// }
+//
+// console.assert(sumOfArray([1, 2]) === 3);
+// console.assert(sumOfArray([]) === 0);
+// console.assert(sumOfArray([1, 2, 3]) === 6);
+// console.assert(sumOfArray([10, 9, 8]) === 27);
 
 /**
  * PART 1
@@ -44,15 +43,21 @@ console.assert(sumOfArray([10, 9, 8]) === 27);
 //  * - if no GCD exists, return 1
 //  */
 //
-// function GCD(a, b){
-//     // YOUR CODE HERE
-// }
-//
-// console.assert(GCD(5,1) === 1);
-// console.assert(GCD(15,3) === 3);
-// console.assert(GCD(15,5) === 5);
-// console.assert(GCD(50,20) === 10);
-//
+function GCD(a, b){
+    // YOUR CODE HERE
+  if (b === 0) {
+    return a;
+  } else {
+    var remainder = a % b;
+    return GCD(b,remainder);
+  }
+}
+
+console.assert(GCD(5,1) === 1);
+console.assert(GCD(15,3) === 3);
+console.assert(GCD(15,5) === 5);
+console.assert(GCD(50,20) === 10);
+
 // /**
 //  * PART 3
 //  *
