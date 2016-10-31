@@ -4,22 +4,22 @@
  * Write a function that calculates the sum of all the numbers in an array
  */
 
-// function sumOfArray(arr) {
-//     if (arr === []) {
-//         return 0;
-//     }
-//     var sum = 0;
-//     // YOUR CODE HERE
-//     arr.forEach(function(i) {
-//         sum += i;
-//     })
-//     return sum;
-// }
-//
-// console.assert(sumOfArray([1, 2]) === 3);
-// console.assert(sumOfArray([]) === 0);
-// console.assert(sumOfArray([1, 2, 3]) === 6);
-// console.assert(sumOfArray([10, 9, 8]) === 27);
+function sumOfArray(arr) {
+    if (arr === []) {
+        return 0;
+    }
+    var sum = 0;
+    // YOUR CODE HERE
+    arr.forEach(function(i) {
+        sum += i;
+    })
+    return sum;
+}
+
+console.assert(sumOfArray([1, 2]) === 3);
+console.assert(sumOfArray([]) === 0);
+console.assert(sumOfArray([1, 2, 3]) === 6);
+console.assert(sumOfArray([10, 9, 8]) === 27);
 
 /**
  * PART 1
@@ -28,13 +28,13 @@
  * arguments and computes the sum of those two numbers.
  */
 
-// function sum(a, b){
-//     // YOUR CODE HERE
-//     return a + b;
-// }
-//
-// console.assert(sum(8, 11) === 19);
-// console.assert(sum(4, 100) === 104);
+function sum(a, b){
+    // YOUR CODE HERE
+    return a + b;
+}
+
+console.assert(sum(8, 11) === 19);
+console.assert(sum(4, 100) === 104);
 //
 // /**
 //  * PART 2
@@ -43,20 +43,20 @@
 //  * - if no GCD exists, return 1
 //  */
 //
-// function GCD(a, b){
-//     // YOUR CODE HERE
-//   if (b === 0) {
-//     return a;
-//   } else {
-//     var remainder = a % b;
-//     return GCD(b,remainder);
-//   }
-// }
-//
-// console.assert(GCD(5,1) === 1);
-// console.assert(GCD(15,3) === 3);
-// console.assert(GCD(15,5) === 5);
-// console.assert(GCD(50,20) === 10);
+function GCD(a, b){
+    // YOUR CODE HERE
+  if (b === 0) {
+    return a;
+  } else {
+    var remainder = a % b;
+    return GCD(b,remainder);
+  }
+}
+
+console.assert(GCD(5,1) === 1);
+console.assert(GCD(15,3) === 3);
+console.assert(GCD(15,5) === 5);
+console.assert(GCD(50,20) === 10);
 
 // /**
 //  * PART 3
@@ -64,21 +64,21 @@
 //  * write a function that prints out the Least Common Multiple of two numbers
 //  */
 //
-// function LCM(a, b) {
-//     // YOUR CODE HERE
-//     if (a === 0 || b === 0) {
-//         return ;
-//     } else {
-//       var remainder = a % b;
-//       return Math.abs(a * b) / GCD(a,b);
-//     };
-// }
-//
-//
-// console.assert(LCM(10, 10) === 10)
-// console.assert(LCM(2, 5) === 10)
-// console.assert(LCM(3, 6) === 6)
-// console.assert(typeof LCM(0, 1) === 'undefined')
+function LCM(a, b) {
+    // YOUR CODE HERE
+    if (a === 0 || b === 0) {
+        return ;
+    } else {
+      var remainder = a % b;
+      return Math.abs(a * b) / GCD(a,b);
+    };
+}
+
+
+console.assert(LCM(10, 10) === 10)
+console.assert(LCM(2, 5) === 10)
+console.assert(LCM(3, 6) === 6)
+console.assert(typeof LCM(0, 1) === 'undefined')
 
 // /**
 //  * Part 4
@@ -90,17 +90,25 @@
 //  * - for every number that is a multiple of 3 and 5, return "fizzbuzz"
 //  */
 //
-// function fizzbuzz(N){
-//     // YOUR CODE HERE
-//   if (N === 0) {
-//     return [];
-//   } else {
-//
-//   }
-// }
-//
-// console.assert(fizzbuzz(1) === ".")
-// console.assert(fizzbuzz(2) === "..")
-// console.assert(fizzbuzz(3) === "..fizz")
-// console.assert(fizzbuzz(5) === "..fizz.buzz")
-// console.assert(fizzbuzz(10) === "..fizz.buzzfizz..fizzbuzz")
+function fizzbuzz(N) {
+  var result = "";
+  for (var i = 1; i <= N; i++) {
+    if (i % 3 !== 0 && i % 5 != 0) {
+      result = result + ".";
+    } else if (i % 3 === 0 && i % 5 !== 0) {
+      result = result + "fizz";
+    } else if (i % 3 !== 0 && i % 5 === 0) {
+      result = result + "buzz";
+    } else if (i % 3 === 0 && i % 5 === 0) {
+      result = result + "fizzbuzz";
+    }
+  }
+  return result;
+}
+
+
+console.assert(fizzbuzz(1) === ".")
+console.assert(fizzbuzz(2) === "..")
+console.assert(fizzbuzz(3) === "..fizz")
+console.assert(fizzbuzz(5) === "..fizz.buzz")
+console.assert(fizzbuzz(10) === "..fizz.buzzfizz..fizzbuzz")
