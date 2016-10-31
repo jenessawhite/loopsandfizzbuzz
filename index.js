@@ -4,13 +4,16 @@
  * Write a function that calculates the sum of all the numbers in an array
  */
 
-function sumOfArray(arr){
-  if (arr === []) {
-    return [];
-  }
-    var sum = 0
+function sumOfArray(arr) {
+    if (arr === []) {
+        return 0;
+    }
+    var sum = 0;
     // YOUR CODE HERE
-    arr.reduce(function (a,b) {return a + b});
+    // arr.reduce(function (a,b) {return a + b});
+    arr.forEach(function(i) {
+        sum += i;
+    })
     return sum;
 }
 
@@ -26,13 +29,13 @@ console.assert(sumOfArray([10, 9, 8]) === 27);
  * arguments and computes the sum of those two numbers.
  */
 
-function sum(a, b){
-    // YOUR CODE HERE
-    return a + b;
-}
-
-console.assert(sum(8, 11) === 19);
-console.assert(sum(4, 100) === 104);
+// function sum(a, b){
+//     // YOUR CODE HERE
+//     return a + b;
+// }
+//
+// console.assert(sum(8, 11) === 19);
+// console.assert(sum(4, 100) === 104);
 //
 // /**
 //  * PART 2
