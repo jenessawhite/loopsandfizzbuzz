@@ -43,20 +43,20 @@
 //  * - if no GCD exists, return 1
 //  */
 //
-function GCD(a, b){
-    // YOUR CODE HERE
-  if (b === 0) {
-    return a;
-  } else {
-    var remainder = a % b;
-    return GCD(b,remainder);
-  }
-}
-
-console.assert(GCD(5,1) === 1);
-console.assert(GCD(15,3) === 3);
-console.assert(GCD(15,5) === 5);
-console.assert(GCD(50,20) === 10);
+// function GCD(a, b){
+//     // YOUR CODE HERE
+//   if (b === 0) {
+//     return a;
+//   } else {
+//     var remainder = a % b;
+//     return GCD(b,remainder);
+//   }
+// }
+//
+// console.assert(GCD(5,1) === 1);
+// console.assert(GCD(15,3) === 3);
+// console.assert(GCD(15,5) === 5);
+// console.assert(GCD(50,20) === 10);
 
 // /**
 //  * PART 3
@@ -64,15 +64,22 @@ console.assert(GCD(50,20) === 10);
 //  * write a function that prints out the Least Common Multiple of two numbers
 //  */
 //
-// function LCM(a, b){
+// function LCM(a, b) {
 //     // YOUR CODE HERE
+//     if (a === 0 || b === 0) {
+//         return ;
+//     } else {
+//       var remainder = a % b;
+//       return Math.abs(a * b) / GCD(a,b);
+//     };
 // }
 //
-// console.assert(LCM(10,10) === 10)
-// console.assert(LCM(2,5) === 10)
-// console.assert(LCM(3,6) === 6)
-// console.assert(LCM(0,1) === 1)
 //
+// console.assert(LCM(10, 10) === 10)
+// console.assert(LCM(2, 5) === 10)
+// console.assert(LCM(3, 6) === 6)
+// console.assert(typeof LCM(0, 1) === 'undefined')
+
 // /**
 //  * Part 4
 //  *
@@ -85,6 +92,11 @@ console.assert(GCD(50,20) === 10);
 //
 // function fizzbuzz(N){
 //     // YOUR CODE HERE
+//   if (N === 0) {
+//     return [];
+//   } else {
+//
+//   }
 // }
 //
 // console.assert(fizzbuzz(1) === ".")
